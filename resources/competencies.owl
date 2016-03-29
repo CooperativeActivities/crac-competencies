@@ -24,11 +24,11 @@
     
 
 
-    <!-- http://www.fhhagenberg.at/crac/compentencies#hasCompentency -->
+    <!-- http://www.fhhagenberg.at/crac/compentencies#hasCompetency -->
 
-    <owl:ObjectProperty rdf:about="http://www.fhhagenberg.at/crac/compentencies#hasCompentency">
+    <owl:ObjectProperty rdf:about="http://www.fhhagenberg.at/crac/compentencies#hasCompetency">
         <rdfs:domain rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Person"/>
-        <rdfs:range rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
+        <rdfs:range rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Competency"/>
     </owl:ObjectProperty>
     
 
@@ -36,7 +36,7 @@
     <!-- http://www.fhhagenberg.at/crac/compentencies#hasProficiency -->
 
     <owl:ObjectProperty rdf:about="http://www.fhhagenberg.at/crac/compentencies#hasProficiency">
-        <rdfs:domain rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
+        <rdfs:domain rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Competency"/>
         <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
     </owl:ObjectProperty>
     
@@ -56,11 +56,11 @@
     
 
 
-    <!-- http://www.fhhagenberg.at/crac/compentencies#requiresCompentency -->
+    <!-- http://www.fhhagenberg.at/crac/compentencies#requiresCompetency -->
 
-    <owl:ObjectProperty rdf:about="http://www.fhhagenberg.at/crac/compentencies#requiresCompentency">
+    <owl:ObjectProperty rdf:about="http://www.fhhagenberg.at/crac/compentencies#requiresCompetency">
         <rdfs:domain rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Task"/>
-        <rdfs:range rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
+        <rdfs:range rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Competency"/>
     </owl:ObjectProperty>
     
 
@@ -105,9 +105,9 @@
     
 
 
-    <!-- http://www.fhhagenberg.at/crac/compentencies#Compentency -->
+    <!-- http://www.fhhagenberg.at/crac/compentencies#Competency -->
 
-    <owl:Class rdf:about="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
+    <owl:Class rdf:about="http://www.fhhagenberg.at/crac/compentencies#Competency"/>
     
 
 
@@ -131,67 +131,7 @@
     
 
 
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Individuals
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
     
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#Excel -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#Excel">
-        <rdf:type rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
-        <isPartOf rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Office"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#Hannes -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#Hannes">
-        <rdf:type rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Person"/>
-        <hasCompentency rdf:resource="http://www.fhhagenberg.at/crac/compentencies#blankNode"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#HannesSeineProgProf -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#HannesSeineProgProf">
-        <rdf:type rdf:resource="http://www.fhhagenberg.at/crac/compentencies#ProficiencyLevel"/>
-        <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</level>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#Office -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#Office">
-        <rdf:type rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#Programming -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#Programming">
-        <rdf:type rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Compentency"/>
-        <compentencyName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Programming</compentencyName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://www.fhhagenberg.at/crac/compentencies#blankNode -->
-
-    <owl:NamedIndividual rdf:about="http://www.fhhagenberg.at/crac/compentencies#blankNode">
-        <isCompetency rdf:resource="http://www.fhhagenberg.at/crac/compentencies#Programming"/>
-        <level rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</level>
-    </owl:NamedIndividual>
 </rdf:RDF>
 
 
