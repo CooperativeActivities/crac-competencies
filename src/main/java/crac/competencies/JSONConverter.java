@@ -33,12 +33,12 @@ public class JSONConverter {
 				//System.out.println(competency+":"+level.getLiteral().toString());
 				JSONObject c = new JSONObject();
 				c.put("competency", competency.getURI());
-				c.put("level", level.getLiteral().toString());
+				c.put("level", Integer.parseInt(level.getLiteral().toString()));
 				competencies.add(c);
 			}
 		}
 		person.put("competencies", competencies);
-		System.out.println(person);
+		//System.out.println(person);
 		return person;
 	}
 	

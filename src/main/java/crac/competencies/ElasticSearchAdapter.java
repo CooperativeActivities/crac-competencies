@@ -8,13 +8,13 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 
 import org.json.simple.JSONObject;
 
 public class ElasticSearchAdapter {
 	
-	private static final String uri = "http://localhost:9200/crac/test";
+
+	public static final String uri = "http://localhost:9200/crac/test";
 	
 	public void addPerson(JSONObject pers, String id){
 		try {
@@ -24,12 +24,18 @@ public class ElasticSearchAdapter {
 			e.printStackTrace();
 		}
 	}
-
+	
+	public static String search(JSONObject searchObj) throws IOException {
+		return httpGet(uri+"/_search?source="+searchObj.toString());
+		//SearchResponse response = client.prepareSearch().execute().actionGet();
+		//return response.toString();
+	}
+	
 	private static String httpGet(String urlStr) throws IOException {
 		  URL url = new URL(urlStr);
 		  HttpURLConnection conn =
 		      (HttpURLConnection) url.openConnection();
-
+System.out.println(conn.getResponseCode());
 		  if (conn.getResponseCode() != 200) {
 		    throw new IOException(conn.getResponseMessage());
 		  }
@@ -73,7 +79,6 @@ public class ElasticSearchAdapter {
 			  writer.close();
 			  out.close();
 
-			  System.out.println(conn.getResponseCode());
 			  if (conn.getResponseCode() < 200 || conn.getResponseCode() > 299 ) {
 			    throw new IOException(conn.getResponseMessage());
 			  }

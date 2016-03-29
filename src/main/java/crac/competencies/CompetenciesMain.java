@@ -2,34 +2,43 @@ package crac.competencies;
 
 import java.io.IOException;
 
+import org.json.simple.JSONObject;
+
 public class CompetenciesMain {
 
 	public static void main(String[] args) {
-		CompetenciesOntology ont = new CompetenciesOntology();
+		//ElasticSearchAdapter adapter = new ElasticSearchAdapter();
+		/*CompetenciesOntology ont = new CompetenciesOntology();
 		ont.initializeCompetencies();
 		
-		ont.addPerson("Markus");
+		ont.addPerson("Hannes");
 		ont.addBasicCompetency("JavaProgrammierung");
 		
 		
-		ont.addCompetencyToPerson("Markus", "JavaProgrammierung", 90);
+		ont.addCompetencyToPerson("Hannes", "JavaProgrammierung", 90);
 		
 		ont.addBasicCompetency("MSOffice");
-		ont.addCompetencyToPerson("Markus", "MSOffice", 70);
-		//ont.print();
+		ont.addCompetencyToPerson("Hannes", "MSOffice", 70);
+		//ont.print();*/
 		
 		
-		/*try {
+		try {
+			JSONObject searchObj = new JSONObject();
+			JSONObject query = new JSONObject();
+			JSONObject match = new JSONObject();
+			match.put("competencies.competency", "JavaProgrammierung");
+			query.put("match", match);
+			searchObj.put("query", query);
 			
+			System.out.println(searchObj);
 			
-			String response = ont.httpGet("http://localhost:9200/megacorp/employee/1");
-	
+			String response = ElasticSearchAdapter.search(searchObj);
 			System.out.println(response);
 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 	}
 
 }
