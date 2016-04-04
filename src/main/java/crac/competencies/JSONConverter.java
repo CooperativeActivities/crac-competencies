@@ -22,7 +22,7 @@ public class JSONConverter {
 		//System.out.println(node);
 		StmtIterator iter = i.listProperties();
 		
-		ArrayList<JSONObject> competencies = new ArrayList<>();
+		ArrayList<JSONObject> competencies = new ArrayList<JSONObject>();
 		while(iter.hasNext()){
 			Statement stat = iter.next();
 			if(stat.getPredicate().equals(model.getProperty(CompetenciesOntology.NS + "#hasCompetency"))){
